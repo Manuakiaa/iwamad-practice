@@ -1,0 +1,1 @@
+.nav-links{gap:15px;margin:10px 0;display:flex}.nav-links a{color:#333;text-decoration:none}.nav-links a.active{color:#007bff;border-bottom:2px solid #007bff;font-weight:700}.header{justify-content:space-between;align-items:center;margin-bottom:20px;display:flex}
