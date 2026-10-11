@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>User profile</header>
+
+  <main>
+    <div class="card">
+      <img src="myhphoto.png" alt="Profile Photo">
+      <h2>Miras Anuarbek</h2>
+      <p>KBTU student. I am interested in web development and modern technologies.</p>
+
+      <a href="https://github.com/Manuakiaa" target="_blank">GitHub</a>
+      <a href="mailto:m_anuarbek@kbtu.kz">Email</a>
+
+      <br>
+      <button id="like-btn">🤍 Like</button>
+    </div>
+  </main>
+
+  <footer>© 2026 Profile Card Project. All rights reserved.</footer>
+
+  <script>
+    const btn = document.getElementById('like-btn');
+    let liked = false;
+    btn.onclick = () => {
+      liked = !liked;
+      btn.textContent = liked ? '❤️ Liked' : '🤍 Like';
+    };
+  </script>
+</body>
+</html>
