@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import SkillBadge from './SkillBadge';
+import LikeButton from './LikeButton';
 import type { Skill } from './SkillBadge';
 
 type ProfileCardProps = {
@@ -10,8 +10,6 @@ type ProfileCardProps = {
 };
 
 export default function ProfileCard({ name, role, avatarUrl, skills }: ProfileCardProps) {
-  const [likes, setLikes] = useState(0);
-
   return (
     <div className="profile-card">
       {avatarUrl && (
@@ -27,9 +25,7 @@ export default function ProfileCard({ name, role, avatarUrl, skills }: ProfileCa
       <p className="role">{role}</p>
       
       <div className="likes-section">
-        <button onClick={() => setLikes(likes + 1)}>
-          ❤️ Likes: {likes}
-        </button>
+        <LikeButton />
       </div>
 
       <div className="skills-section">
@@ -38,7 +34,7 @@ export default function ProfileCard({ name, role, avatarUrl, skills }: ProfileCa
           <p>No skills available.</p>
         ) : (
           <div className="skills-list">
-            {skills.map(skill => (
+            {skills.map((skill) => (
               <SkillBadge key={skill.id} skill={skill} />
             ))}
           </div>

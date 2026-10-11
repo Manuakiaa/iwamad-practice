@@ -1,29 +1,19 @@
-import Header from './components/Header';
-import ProfileCard from './components/ProfileCard';
-import Footer from './components/Footer';
-import myPhoto from './assets/Myphoto.png';  
+import { Routes, Route } from 'react-router';
+import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
+import SkillsPage from './pages/SkillsPage';
+import ContactPage from './pages/ContactPage';
+import NotFoundPage from './pages/NotFoundPage';
 
-function App() {
-  const mySkills = [
-    { id: 1, label: 'PC Assembly & Setup' },
-    { id: 2, label: 'Laravel Backend' },
-    { id: 3, label: 'Python Developer' },
-  ];
-
+export default function App() {
   return (
-    <div className="app-container">
-      <Header title="My Portfolio" />
-      <main>
-        <ProfileCard 
-          name="Miras" 
-          role="Developer & IT Enthusiast"
-          avatarUrl={myPhoto}  
-          skills={mySkills}
-        />
-      </main>
-      <Footer text="© 2026 Miras" />
-    </div>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path="skills" element={<SkillsPage />} />
+        <Route path="contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFoundPage />} />
+      </Route>
+    </Routes>
   );
 }
-
-export default App;
